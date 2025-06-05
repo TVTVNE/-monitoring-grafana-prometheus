@@ -1,24 +1,29 @@
 {
   "dashboard": {
-    "annotations": {
-      "list": []
-    },
+    "title": "Exemple Monitoring",
     "panels": [
       {
+        "type": "timeseries",
         "title": "CPU Usage",
-        "type": "graph",
         "targets": [
           {
             "expr": "100 - (avg by(instance) (rate(node_cpu_seconds_total{mode=\"idle\"}[5m])) * 100)",
-            "legendFormat": "{{instance}}",
-            "refId": "A"
+            "legendFormat": "{{instance}}"
           }
         ],
-        "gridPos": { "x": 0, "y": 0, "w": 12, "h": 6 }
+        "gridPos": { "x": 0, "y": 0, "w": 24, "h": 9 }
       },
       {
+        "type": "timeseries",
         "title": "Memory Usage",
-        "type": "graph",
         "targets": [
           {
             "expr": "(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes * 100",
+            "legendFormat": "{{instance}}"
+          }
+        ],
+        "gridPos": { "x": 0, "y": 9, "w": 24, "h": 9 }
+      }
+    ]
+  }
+}
