@@ -22,3 +22,16 @@
         "targets": [
           {
             "expr": "(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes * 100",
+            "legendFormat": "Memory",
+            "refId": "B"
+          }
+        ],
+        "gridPos": { "x": 0, "y": 6, "w": 12, "h": 6 }
+      }
+    ],
+    "schemaVersion": 16,
+    "title": "System Dashboard",
+    "version": 1
+  },
+  "overwrite": true
+}
